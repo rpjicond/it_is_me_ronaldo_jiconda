@@ -1,13 +1,49 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
-import { Cpu, Wifi, Server, Layers, Github, Linkedin, Mail, Globe, ChevronRight, ExternalLink, Network, Terminal, Activity, Lock, X, ChevronLeft, Home, Database, Map, HeartPulse, Satellite, Shield, Gamepad2 } from 'lucide-react';
+import { Cpu, Wifi, Server, Layers, Github, Linkedin, Mail, Globe, ChevronRight, ExternalLink, Network, Terminal, Activity, Lock, X, ChevronLeft, Home, Database, Map, HeartPulse, Satellite, Shield, Gamepad2, GraduationCap, Pill } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Language } from '../translations';
 
-// --- DADOS DOS PROJETOS ---
+// --- DADOS DOS PROJETOS (TODOS OS 18 PROJETOS INCLUÍDOS E CAMINHOS CORRIGIDOS) ---
 const portfolioProjects = [
   {
     id: 0,
+    title: "EducAngola – Plateforme de Gestion Académique IA",
+    description: "ERP éducatif complet avec IA Pédagogique (Gemini), gestion multi-portails et authentification centralisée via Keycloak.",
+    fullDescription: "Développement d'une infrastructure de gestion académique à grande échelle. Le système comprend un portail étudiant, un portail administratif et une fonctionnalité innovante d'IA Pédagogique utilisant l'API Google Gemini pour analyser les performances académiques et générer des insights prédictifs. L'architecture backend repose sur Spring Boot et PostgreSQL, sécurisée par Keycloak IAM pour une gestion d'identité robuste. Le système gère les inscriptions, la facturation, les bulletins de notes et les statistiques en temps réel.",
+    features: [
+      "IA Pédagogique : Intégration de Google Gemini pour l'analyse prédictive des performances des élèves.",
+      "Authentification robuste : Implémentation de Keycloak IAM (Identity and Access Management).",
+      "Architecture Data-Centric : Modélisation relationnelle complexe sous PostgreSQL gérant des milliers d'enregistrements.",
+      "Frontend React : Dashboards analytiques haute performance avec graphiques en temps réel."
+    ],
+    tags: ["Spring Boot", "React", "Keycloak IAM", "Gemini AI", "PostgreSQL"],
+    images: [
+      "assets/educangola/001.png", "assets/educangola/002.png", "assets/educangola/003.png",
+      "assets/educangola/004.png", "assets/educangola/005.png", "assets/educangola/006.png",
+      "assets/educangola/007.png", "assets/educangola/008.png"
+    ],
+    github: "",
+    icon: <GraduationCap className="w-5 h-5" />
+  },
+  {
+    id: 1,
+    title: "KumoPharma – ERP Pharmaceutique & Logistique",
+    description: "Solution complète de gestion d'officine, stocks et ventes avec intelligence artificielle intégrée pour les suggestions d'achat.",
+    fullDescription: "KumoPharma est un ERP métier destiné au secteur pharmaceutique. Développé en stack Spring Boot / React, il offre une gestion de stock critique, un système de point de vente (POS) et un module d'IA (KumoAI) pour l'optimisation des stocks et suggestions de ventes basées sur les tendances. Le projet inclut également la gestion du personnel (RH), la comptabilité et le suivi logistique des livraisons en temps réel.",
+    features: [
+      "Gestion de stocks automatisée avec alertes de péremption et de rupture via KumoAI.",
+      "Système de facturation et reçus certifié intégrant des bases de données haute disponibilité.",
+      "Dashboard de pilotage avec suivi de la rentabilité et gestion des commissions employés.",
+      "Architecture Dockerisée assurant un déploiement fluide en environnement On-premise ou Cloud."
+    ],
+    tags: ["Spring Boot", "React", "MySQL", "Docker", "KumoAI"],
+    images: ["assets/kumopharma/001.png"],
+    github: "",
+    icon: <Pill className="w-5 h-5" />
+  },
+  {
+    id: 2,
     title: "Déploiement Infrastructure Réseau (WorldSkills)",
     description: "Déploiement complet d'une infrastructure multi-sites (HQ, Remote, Internet) avec backbone Cisco, VRF, OSPF/BGP et virtualisation hybride (ESXi/Proxmox).",
     fullDescription: "Projet SAE inspiré des épreuves WorldSkills France (Administration Systèmes et Réseaux). L'objectif était de déployer, configurer et valider une infrastructure d'entreprise réaliste soumise à des contraintes professionnelles. En tant que responsable du backbone réseau, j'ai implémenté un plan d'adressage complexe, le routage interne/externe (OSPF/BGP) et l'isolation stricte des flux via VRF. L'infrastructure intègre une couche de virtualisation hybride (VMware ESXi pour le siège, Proxmox VE pour les services Internet/Distants) et une gestion automatisée des équipements via des playbooks Ansible.",
@@ -25,7 +61,25 @@ const portfolioProjects = [
     icon: <Server className="w-5 h-5" />
   },
   {
-    id: 1,
+    id: 3,
+    title: "Sécurisation IoT & Supervision Datacenter",
+    description: "Système de sécurité critique (RFID, capteurs) avec supervision temps réel (Node-RED, InfluxDB, Grafana) et haute disponibilité (VRRP).",
+    fullDescription: "Conception d'un système de sécurisation IoT complet pour un datacenter. Le système assure une surveillance environnementale continue (température, fumée, chocs, mouvements) et gère le contrôle d'accès physique via RFID avec protection anti-clonage. L'architecture est conçue pour la résilience : les services de supervision (Node-RED, InfluxDB, Grafana) sont hébergés sur une grappe de Raspberry Pi configurée en Haute Disponibilité (HA) grâce au protocole VRRP, garantissant un basculement en moins de 50ms en cas de panne.",
+    features: [
+      "Supervision temps réel multi-capteurs : Température (DHT22), Fumée (MQ135), Mouvement (PIR), Chocs.",
+      "Contrôle d'accès physique sécurisé via badges RFID (PN532) avec journalisation MySQL.",
+      "Architecture Haute Disponibilité (HA) : Redondance des serveurs via VRRP (Keepalived).",
+      "Stack de Monitoring centralisée : Node-RED (Logique/Alertes), InfluxDB (Time-series) et Grafana (Dashboards)."
+    ],
+    tags: ["IoT / ESP8266", "Node-RED", "InfluxDB & Grafana", "VRRP / HA", "Security"],
+    images: [
+      "assets/datacenter-security/001.png", "assets/datacenter-security/002.png"
+    ],
+    github: "https://github.com/rpjicond/Securisation-IoT-d-un-Datacenter",
+    icon: <Lock className="w-5 h-5" />
+  },
+  {
+    id: 4,
     title: "Design d'Architecture Réseau Haute Disponibilité",
     description: "Conception et simulation d'une infrastructure réseau d'entreprise multi-sites avec redondance WAN, pare-feu HA et DMZ Zero-Trust.",
     fullDescription: "Conception avancée d'une architecture réseau d'entreprise complète (Campus et Datacenter) axée sur la haute disponibilité et la sécurité. L'infrastructure est connectée à de multiples FAI (Orange, SFR, Bouygues) pour assurer une redondance WAN. La topologie suit le modèle hiérarchique classique (Core, Distribution, Accès) avec une forte résilience via l'agrégation de liens (LACP/PAgP). Une politique de sécurité stricte est appliquée avec une ségrégation poussée par VLANs (Utilisateurs, VoIP, Invités, Serveurs, Admin), une zone DMZ isolée (Zero-Trust) pour les services front-end, et l'intégration de vSwitches pour l'environnement de virtualisation.",
@@ -43,7 +97,7 @@ const portfolioProjects = [
     icon: <Network className="w-5 h-5" />
   },
   {
-    id: 2,
+    id: 5,
     title: "Infrastructure IAM & Sécurité Réseau (Nexus)",
     description: "Architecture Linux sécurisée avec pare-feu (Iptables), Proxy filtrant (Squid), annuaire LDAP et outils CLI sur mesure.",
     fullDescription: "Conception et déploiement de 'Toulouse Identity Nexus', une infrastructure réseau d'entreprise sécurisée virtualisée sous Debian 12. Le système est segmenté en trois serveurs clés : une passerelle (Gateway) gérant le routage et le NAT via Iptables, un serveur d'authentification centralisé (OpenLDAP), et un serveur Proxy (Squid). L'accès à Internet depuis le réseau local nécessite une authentification LDAP stricte, avec un filtrage granulaire des domaines (ex: blocage systématique des réseaux sociaux). Pour faciliter l'administration, j'ai développé des interfaces CLI interactives ('Nexus Sentry' et 'Identity Nexus') permettant le monitoring du trafic en temps réel et la gestion des utilisateurs.",
@@ -64,7 +118,7 @@ const portfolioProjects = [
     icon: <Shield className="w-5 h-5" />
   },
   {
-    id: 3,
+    id: 6,
     title: "Centre de Contrôle Satellite 3D (Télémétrie)",
     description: "Dashboard 3D interactif pour le suivi orbital et la télémétrie de satellites en temps réel, propulsé par Redis.",
     fullDescription: "Développement d'un centre de contrôle de mission (MCC) complet pour le suivi satellitaire. L'interface 3D interactive, construite avec React Three Fiber, affiche l'orbite terrestre et la position spatiale en temps réel de multiples constellations de satellites (Starlink, ISS, GPS). Le backend traite les flux de télémétrie (batterie, température CPU, altitude, force du signal) en utilisant un cache Redis pour garantir une synchronisation ultra-rapide et à très faible latence entre les systèmes de bord (OBC) et le client web.",
@@ -84,7 +138,7 @@ const portfolioProjects = [
     icon: <Satellite className="w-5 h-5" />
   },
   {
-    id: 4,
+    id: 7,
     title: "EcoAngola Control Center (Smart City)",
     description: "Dashboard interactif (Mapbox) et application mobile IoT pour la gestion intelligente des déchets et suivi de réseau hybride.",
     fullDescription: "Conception et développement du 'EcoAngola Control Center', une plateforme de supervision Smart City avancée. Ce système cartographique interactif simule et surveille une infrastructure réseau hybride (LoRaWAN + 5G) à l'échelle de Luanda. La communication IoT en temps réel est gérée via le protocole MQTT. De plus, pour optimiser la logistique urbaine, une application mobile dédiée a été développée pour les agents de terrain : grâce à la géolocalisation, ils reçoivent des notifications push en temps réel dès qu'un conteneur à déchets à proximité atteint sa capacité maximale.",
@@ -104,7 +158,7 @@ const portfolioProjects = [
     icon: <Map className="w-5 h-5" />
   },
   {
-    id: 5,
+    id: 8,
     title: "Smart Home Digital Twin (3D Real-time)",
     description: "Jumeau numérique interactif pour la surveillance IoT en temps réel, propulsé par MQTT, Spring Boot et API Gateway.",
     fullDescription: "Développement d'un Jumeau Numérique (Digital Twin) d'une maison intelligente utilisant React Three Fiber. Le système permet un contrôle bidirectionnel : les interactions dans l'interface 3D déclenchent des appareils physiques, et les capteurs réels mettent à jour le modèle 3D instantanément. L'architecture est conçue pour une latence minimale avec un backend robuste développé en Java (Spring Boot), intégrant une API Gateway pour le routage et la sécurité, ainsi qu'un Broker MQTT pour la messagerie asynchrone.",
@@ -125,7 +179,7 @@ const portfolioProjects = [
     icon: <Home className="w-5 h-5" />
   },
   {
-    id: 6,
+    id: 9,
     title: "Architecture Réseau Multi-AS (BGP/OSPF/EIGRP)",
     description: "Simulation d'une infrastructure réseau d'entreprise complexe inter-connectant plusieurs systèmes autonomes avec redistribution de routes.",
     fullDescription: "Mise en place et simulation d'une architecture réseau avancée interconnectant plusieurs sites d'entreprise répartis sur différents Systèmes Autonomes (AS65000, AS65001, AS65002). Le projet illustre la maîtrise du routage dynamique interne (IGP) avec OSPF et EIGRP, ainsi que du routage externe (EGP) via BGP (eBGP et iBGP). L'infrastructure inclut des optimisations critiques telles que l'implémentation de Route Reflectors (RR) pour le maillage iBGP et la redistribution complexe des tables de routage entre les différents protocoles pour assurer une connectivité de bout en bout.",
@@ -144,7 +198,7 @@ const portfolioProjects = [
     icon: <Network className="w-5 h-5" />
   },
   {
-    id: 7,
+    id: 10,
     title: "Plateforme de Gestion Médicale (Medicare RFND)",
     description: "Système d'information hospitalier avec intégration IoT de montres connectées via API pour le suivi des signaux vitaux (Backend Django).",
     fullDescription: "Développement de Medicare RFND, un système d'information hospitalier complet orienté télémédecine. Une innovation majeure du projet est son intégration IoT : les patients sont équipés de montres connectées qui transmettent leurs signaux vitaux (rythme cardiaque, oxygénation, calories) en temps réel vers le backend via une API REST. Le backend, construit en Python (Django), repose sur une modélisation de base de données relationnelle gérant ces flux de données complexes. Le frontend propose un tableau de bord analytique permettant aux médecins de surveiller l'état de santé des patients instantanément.",
@@ -162,7 +216,7 @@ const portfolioProjects = [
     icon: <HeartPulse className="w-5 h-5" />
   },
   {
-    id: 8,
+    id: 11,
     title: "Système de Monitoring Industriel (Proteus)",
     description: "Simulation complète d'un nœud IoT industriel. Lecture de capteurs multiples gérée par Arduino UNO et transmission via Ethernet.",
     fullDescription: "Simulation complète d'un nœud IoT industriel. Lecture de capteurs multiples (DHT22, ACS712, SW-420) gérée par Arduino UNO. Transmission de données via Ethernet (ENC28J60) avec stack TCP/IP optimisée. Ce projet démontre la capacité à maquetter et valider des architectures réseaux complexes avant le déploiement matériel.",
@@ -182,7 +236,7 @@ const portfolioProjects = [
     icon: <Activity className="w-5 h-5" />
   },
   {
-    id: 9,
+    id: 12,
     title: "Station Météo LoRaWAN",
     description: "Station météorologique autonome alimentée par énergie solaire, transmettant des données via LoRaWAN sur de longues distances.",
     fullDescription: "Conception et déploiement d'une station météorologique totalement autonome. Alimentée par des panneaux solaires, elle collecte des données environnementales précises (température, humidité, pression atmosphérique) et les transmet de manière sécurisée via le protocole LoRaWAN sur de longues distances (jusqu'à 15 km en zone rurale).",
@@ -200,7 +254,7 @@ const portfolioProjects = [
     icon: <Wifi className="w-5 h-5" />
   },
   {
-    id: 10,
+    id: 13,
     title: "Passerelle Edge Industrielle",
     description: "Passerelle basée sur Raspberry Pi collectant des données Modbus de PLC et les transmettant de manière sécurisée au cloud.",
     fullDescription: "Développement d'une passerelle industrielle (Edge Gateway) basée sur un Raspberry Pi. Ce système est chargé d'interroger les automates programmables industriels (PLC) via le protocole Modbus RTU/TCP, de traiter et filtrer les données localement (Edge Computing), puis de les transmettre de façon sécurisée vers une plateforme Cloud pour le monitoring global.",
@@ -219,7 +273,7 @@ const portfolioProjects = [
     icon: <Server className="w-5 h-5" />
   },
   {
-    id: 11,
+    id: 14,
     title: "Tracker BLE Wearable",
     description: "Dispositif portable basse consommation pour le suivi des actifs en intérieur utilisant des balises BLE et FreeRTOS.",
     fullDescription: "Création d'un dispositif portable (wearable) ultra-basse consommation destiné au suivi d'équipements et de personnel en intérieur (Indoor Tracking). Basé sur la puce nRF52840, il utilise la technologie Bluetooth Low Energy (BLE) et communique avec des balises (beacons) pour un positionnement précis.",
@@ -238,7 +292,7 @@ const portfolioProjects = [
     icon: <Cpu className="w-5 h-5" />
   },
   {
-    id: 12,
+    id: 15,
     title: "Système de Surveillance IoT (Web)",
     description: "Plateforme web complète (PHP/MySQL) pour la gestion, l'analyse et la visualisation de données de capteurs IoT.",
     fullDescription: "Développement d'une plateforme web complète (Full-Stack) pour la supervision de capteurs IoT. Le frontend propose un tableau de bord analytique interactif avec des graphiques générés en temps réel. Le backend gère l'authentification des utilisateurs, le stockage sécurisé des données structurées et la génération de rapports automatisés.",
@@ -257,7 +311,7 @@ const portfolioProjects = [
     icon: <Database className="w-5 h-5" />
   },
   {
-    id: 13,
+    id: 16,
     title: "Jeu de Tic-Tac-Toe & IA (Python)",
     description: "Implémentation classique avec interface graphique (Pygame) et Intelligence Artificielle invulnérable (Minimax).",
     fullDescription: "Projet personnel développé en Python utilisant la bibliothèque Pygame. Le jeu propose une interface graphique interactive et une Intelligence Artificielle robuste basée sur l'algorithme Minimax, rendant l'ordinateur invincible. Ce projet a servi à consolider les compétences en logique algorithmique, en programmation orientée objet et en développement d'interfaces.",
@@ -275,7 +329,7 @@ const portfolioProjects = [
     icon: <Gamepad2 className="w-5 h-5" />
   },
   {
-    id: 14,
+    id: 17,
     title: "Minecraft IoT Multiplayer (Gants Connectés)",
     description: "Jeu Minecraft contrôlé par des gants physiques IoT (ESP8266) déclenchant des pouvoirs via MQTT et Python.",
     fullDescription: "Projet 'Phygital' innovant connectant le monde physique au virtuel. Deux joueurs s'affrontent dans Minecraft Pi Edition en portant des gants connectés équipés de boutons poussoirs et de microcontrôleurs ESP8266. Chaque action physique envoie un message MQTT (via broker Mosquitto) traité par un script Python sur Raspberry Pi, déclenchant des super-pouvoirs (ascenseur d'eau, mur de glowstone) ou des malus (lave, TNT) en temps réel dans le jeu.",
@@ -291,24 +345,6 @@ const portfolioProjects = [
     ],
     github: "https://github.com/rpjicond/minecraft-iot-gloves-mqtt",
     icon: <Gamepad2 className="w-5 h-5" />
-  },
-  {
-    id: 15,
-    title: "Sécurisation IoT & Supervision Datacenter",
-    description: "Système de sécurité critique (RFID, capteurs) avec supervision temps réel (Node-RED, InfluxDB, Grafana) et haute disponibilité (VRRP).",
-    fullDescription: "Conception d'un système de sécurisation IoT complet pour un datacenter. Le système assure une surveillance environnementale continue (température, fumée, chocs, mouvements) et gère le contrôle d'accès physique via RFID avec protection anti-clonage. L'architecture est conçue pour la résilience : les services de supervision (Node-RED, InfluxDB, Grafana) sont hébergés sur une grappe de Raspberry Pi configurée en Haute Disponibilité (HA) grâce au protocole VRRP, garantissant un basculement en moins de 50ms en cas de panne.",
-    features: [
-      "Supervision temps réel multi-capteurs : Température (DHT22), Fumée (MQ135), Mouvement (PIR), Chocs.",
-      "Contrôle d'accès physique sécurisé via badges RFID (PN532) avec journalisation MySQL.",
-      "Architecture Haute Disponibilité (HA) : Redondance des serveurs via VRRP (Keepalived).",
-      "Stack de Monitoring centralisée : Node-RED (Logique/Alertes), InfluxDB (Time-series) et Grafana (Dashboards)."
-    ],
-    tags: ["IoT / ESP8266", "Node-RED", "InfluxDB & Grafana", "VRRP / HA", "Security"],
-    images: [
-      "assets/datacenter-security/001.png", "assets/datacenter-security/002.png"
-    ],
-    github: "https://github.com/rpjicond/Securisation-IoT-d-un-Datacenter",
-    icon: <Lock className="w-5 h-5" />
   }
 ];
 
@@ -347,7 +383,6 @@ function ProjectModal({ project, isOpen, onClose }: { project: any, isOpen: bool
             alt={project.title}
             className="w-full h-full object-contain transition-opacity duration-300"
             onError={(e) => {
-              // Fallback para imagem caso não carregue
               e.currentTarget.src = "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80";
             }}
           />
@@ -461,15 +496,9 @@ export default function Overlay({ scenario, setScenario }: { scenario: number, s
 
         <div className="flex items-center gap-4 md:gap-8 bg-white/50 px-4 md:px-6 py-2 rounded-full backdrop-blur-md border border-slate-200/50 shadow-sm">
           <div className="hidden md:flex gap-8 text-xs font-mono tracking-widest text-slate-600">
-            <a href="#about" className="hover:text-emerald-600 transition-colors font-semibold">
-              {t.nav?.about || "SOBRE"}
-            </a>
-            <a href="#stack" className="hover:text-emerald-600 transition-colors font-semibold">
-              {t.nav?.stack || "STACK"}
-            </a>
-            <a href="#projects" className="hover:text-emerald-600 transition-colors font-semibold">
-              {t.nav?.projects || "PROJETOS"}
-            </a>
+            <a href="#about" className="hover:text-emerald-600 transition-colors font-semibold">{t.nav?.about || "SOBRE"}</a>
+            <a href="#stack" className="hover:text-emerald-600 transition-colors font-semibold">{t.nav?.stack || "STACK"}</a>
+            <a href="#projects" className="hover:text-emerald-600 transition-colors font-semibold">{t.nav?.projects || "PROJETOS"}</a>
           </div>
           <button
             onClick={toggleLanguage}
@@ -497,10 +526,15 @@ export default function Overlay({ scenario, setScenario }: { scenario: number, s
               </span>
             </h1>
 
+            {/* TEXTO DO HERO AGORA USA A TRADUÇÃO COMPLETA */}
             <p className="text-sm md:text-base text-slate-600 leading-relaxed mb-8 font-medium">
-              {t.hero?.role || "Développeur Embarqué, IoT & Ingénieur Réseaux."}
+              {t.hero?.role}
               <br />
-              {t.hero?.sub || "Conception de solutions connectées, du capteur au cloud."}
+              {t.hero?.sub}
+              <br />
+              <span className="mt-2 block text-xs text-slate-500 font-normal">
+                {t.hero?.description}
+              </span>
             </p>
 
             <div className="flex flex-wrap gap-3">
@@ -565,11 +599,9 @@ export default function Overlay({ scenario, setScenario }: { scenario: number, s
 
       {/* Resto do Site */}
       <div className="pointer-events-auto bg-white/80 backdrop-blur-sm">
-
         {/* STACK SECTION */}
         <Section id="stack" className="border-y border-slate-200 py-24 justify-center">
           <div className="grid grid-cols-1 xl:grid-cols-2 gap-16 items-start">
-
             <div>
               <h2 className="text-3xl md:text-4xl font-bold mb-12 tracking-tight text-slate-900 uppercase">
                 {t.stack?.title || "STACK TECHNIQUE"}
@@ -579,7 +611,7 @@ export default function Overlay({ scenario, setScenario }: { scenario: number, s
                   { label: t.stack?.firmware || "Développement Firmware (C/C++)", value: 95 },
                   { label: t.stack?.pcb || "Conception PCB (KiCad)", value: 85 },
                   { label: t.stack?.protocols || "Protocoles IoT (MQTT, CoAP, LoRaWAN)", value: 90 },
-                  { label: t.stack?.backend || "Backend & Cloud (API Gateway, Spring, Django)", value: 80 },
+                  { label: t.stack?.backend || "Backend & Cloud (API Gateway, Spring, Django)", value: 85 },
                   { label: t.stack?.network || "Réseaux & Systèmes (Linux, VLAN, Docker)", value: 85 },
                 ].map((item, i) => (
                   <div key={i} className="group">
@@ -619,7 +651,6 @@ export default function Overlay({ scenario, setScenario }: { scenario: number, s
                 </div>
               ))}
             </div>
-
           </div>
         </Section>
 
@@ -662,11 +693,9 @@ export default function Overlay({ scenario, setScenario }: { scenario: number, s
                     <h3 className="text-lg font-bold text-slate-900 line-clamp-2">{project.title}</h3>
                     <ExternalLink className="w-5 h-5 text-slate-300 group-hover:text-emerald-500 transition flex-shrink-0 ml-2" />
                   </div>
-
                   <p className="text-[14px] text-slate-500 mb-6 leading-relaxed line-clamp-3">
                     {project.description}
                   </p>
-
                   <div className="flex gap-2 flex-wrap mt-auto">
                     {project.tags.slice(0, 3).map(tag => (
                       <span key={tag} className="border border-slate-200 text-slate-500 bg-slate-50 text-[10px] font-mono px-2 py-1 rounded font-bold">
@@ -695,24 +724,16 @@ export default function Overlay({ scenario, setScenario }: { scenario: number, s
         <Section id="contact" className="items-center text-center py-24 bg-white justify-center">
           <div className="max-w-4xl w-full bg-gradient-to-br from-white to-slate-50 border border-slate-200 shadow-2xl p-12 md:p-20 rounded-[2rem] relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-emerald-400 via-cyan-400 to-emerald-400"></div>
-
             <h2 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight text-slate-900">{t.contact.title}</h2>
-            <p className="text-slate-500 text-lg mb-10 max-w-xl mx-auto font-medium">
-              {t.contact.desc}
-            </p>
-
+            <p className="text-slate-500 text-lg mb-10 max-w-xl mx-auto font-medium">{t.contact.desc}</p>
             <div className="flex justify-center gap-6 mb-12">
               <a href="https://github.com/rpjicond" target="_blank" rel="noopener noreferrer" className="p-5 bg-white border border-slate-200 text-slate-600 rounded-2xl hover:bg-slate-900 hover:text-white hover:border-slate-900 hover:-translate-y-1 shadow-lg transition-all group">
                 <Github className="w-7 h-7" />
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="p-5 bg-white border border-slate-200 text-slate-600 rounded-2xl hover:bg-[#0077b5] hover:text-white hover:border-[#0077b5] hover:-translate-y-1 shadow-lg transition-all group">
-                <Linkedin className="w-7 h-7" />
-              </a>
-              <a href="mailto:contact@iot.dev" className="p-5 bg-white border border-slate-200 text-slate-600 rounded-2xl hover:bg-emerald-500 hover:text-white hover:border-emerald-500 hover:-translate-y-1 shadow-lg transition-all group">
+              <a href="mailto:jicondaronaldo32@gmail.com" className="p-5 bg-white border border-slate-200 text-slate-600 rounded-2xl hover:bg-emerald-500 hover:text-white hover:border-emerald-500 hover:-translate-y-1 shadow-lg transition-all group">
                 <Mail className="w-7 h-7" />
               </a>
             </div>
-
             <div className="font-mono text-xs text-slate-400 tracking-widest uppercase font-bold">
               <p>{t.contact.location}</p>
             </div>
