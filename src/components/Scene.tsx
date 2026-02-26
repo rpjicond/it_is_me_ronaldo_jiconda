@@ -103,7 +103,11 @@ function RaspberryPi({ position }: { position: [number, number, number] }) {
       <group position={[-1.5, 0.3, -0.4]}>
         <mesh><boxGeometry args={[0.6, 0.5, 0.5]} /><meshStandardMaterial color="#94a3b8" metalness={0.9} roughness={0.2} /></mesh>
       </group>
-      <mesh position={[1.5, 0.05, -0.8]}><circleGeometry args={[0.08]} rotation={[-Math.PI / 2, 0, 0]} /><meshBasicMaterial color="#dc2626" toneMapped={false} /></mesh>
+      {/* CORREÇÃO APLICADA AQUI: rotation movida para a tag mesh */}
+      <mesh position={[1.5, 0.05, -0.8]} rotation={[-Math.PI / 2, 0, 0]}>
+        <circleGeometry args={[0.08]} />
+        <meshBasicMaterial color="#dc2626" toneMapped={false} />
+      </mesh>
       <Text position={[0, 0.8, 0]} fontSize={0.4} color="#0f172a" outlineWidth={0.02} outlineColor="#ffffff">Gateway (RPi 4)</Text>
     </group>
   );
@@ -349,8 +353,7 @@ function EnterpriseNetwork() {
   const swDmz = new THREE.Vector3(7, 6, 1); const cloudDmz = new THREE.Vector3(7, 7.5, 0);
 
   const connections: [THREE.Vector3, THREE.Vector3][] = [
-    [isp1, pe1], [isp2, pe2], [isp3, pe3], [pe1, swWanA], [pe1, swWanB], [pe2, swWanA], [pe2, swWanB], [pe3, swWanB], [swWanA, fw1], [swWanB, fw2], [fw1, swWanB], [fw2, swWanA], [fw1, fw2], [fw1, core1], [fw2, core2], [fw1, core2], [fw2, core1], [core1, dist3], [core1, dist1], [core1, dist4], [core1, dist2], [core2, dist3], [core2, dist1], [core2, dist4], [core2, dist2],
-    [dist3, dist1], [dist1, dist2], [dist2, dist4], [dist3, acc2], [dist1, acc2], [dist4, acc3], [dist2, acc4], [dist4, acc4], [fw2, swDmz], [swDmz, cloudDmz]
+    [isp1, pe1], [isp2, pe2], [isp3, pe3], [pe1, swWanA], [pe1, swWanB], [pe2, swWanA], [pe2, swWanB], [pe3, swWanB], [swWanA, fw1], [swWanB, fw2], [fw1, swWanB], [fw2, swWanA], [fw1, fw2], [fw1, core1], [fw2, core2], [fw1, core2], [fw2, core1], [core1, dist3], [core1, dist1], [core1, dist4], [core1, dist2], [core2, dist3], [core2, dist1], [core2, dist4], [core2, dist2], [dist3, dist1], [dist1, dist2], [dist2, dist4], [dist3, acc2], [dist1, acc2], [dist4, acc3], [dist2, acc4], [dist4, acc4], [fw2, swDmz], [swDmz, cloudDmz]
   ];
 
   return (
@@ -514,7 +517,8 @@ export default function Scene({ scenario }: { scenario: number }) {
       <pointLight position={[10, 10, 10]} intensity={1.5} color="#0ea5e9" />
       <pointLight position={[-10, -10, -10]} intensity={1.0} color="#22c55e" />
       <Environment preset="city" />
-      <EffectComposer disableNormalPass>
+      {/* CORREÇÃO APLICADA AQUI: disableNormalPass alterado para enableNormalPass={false} */}
+      <EffectComposer enableNormalPass={false}>
         <Bloom luminanceThreshold={1} mipmapBlur intensity={0.5} />
       </EffectComposer>
       <group position={[0, -1, 0]} scale={1.1}>

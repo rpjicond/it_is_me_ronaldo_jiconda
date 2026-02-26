@@ -51,6 +51,7 @@ export const translations = {
             pcb: 'Design PCB (KiCad)',
             protocols: 'Protocolos IoT (MQTT, LoRa)',
             backend: 'Backend & Cloud (Spring/Django)',
+            network: 'Redes & Sistemas (Linux, VLAN, Docker)', // ADICIONADO PARA CORRIGIR O ERRO
             microcontrollers: 'Microcontroladores (ESP32/STM32)',
             connectivity: 'Conectividade',
             rtos: 'Sistemas Tempo Real (RTOS)',
@@ -118,6 +119,7 @@ export const translations = {
             pcb: 'PCB Design (KiCad)',
             protocols: 'IoT Protocols (MQTT, LoRa)',
             backend: 'Backend & Cloud (Spring/Django)',
+            network: 'Networks & Systems (Linux, VLAN, Docker)', // ADICIONADO PARA CORRIGIR O ERRO
             microcontrollers: 'Microcontrollers (ESP32/STM32)',
             connectivity: 'Connectivity',
             rtos: 'Real-Time Systems (RTOS)',
@@ -185,6 +187,7 @@ export const translations = {
             pcb: 'Conception PCB (KiCad)',
             protocols: 'Protocoles IoT (MQTT, LoRa)',
             backend: 'Backend & Cloud (Spring/Django)',
+            network: 'Réseaux & Systèmes (Linux, VLAN, Docker)', // ADICIONADO PARA CORRIGIR O ERRO
             microcontrollers: 'Microcontrôleurs (ESP32/STM32)',
             connectivity: 'Connectivité',
             rtos: 'Systèmes Temps Réel (RTOS)',

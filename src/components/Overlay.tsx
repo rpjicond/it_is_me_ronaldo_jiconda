@@ -19,7 +19,7 @@ const portfolioProjects = [
     ],
     tags: ["Cisco", "Ansible", "BGP/OSPF", "VRF", "ESXi / Proxmox"],
     images: [
-      "/assets/worldskills/001.png"
+      "assets/worldskills/001.png"
     ],
     github: "https://github.com/rpjicond/sae-worldskills-network-backbone",
     icon: <Server className="w-5 h-5" />
@@ -37,7 +37,7 @@ const portfolioProjects = [
     ],
     tags: ["Network Design", "VLAN / LACP", "Firewall HA", "Zero-Trust", "Enterprise"],
     images: [
-      "/assets/enterprise-network/001.png"
+      "assets/enterprise-network/001.png"
     ],
     github: "https://github.com/rpjicond/labs-CISCO-CCNA-CCNP/blob/main/Lab%20d'Infrastructure%20R%C3%A9seaux/README.md",
     icon: <Network className="w-5 h-5" />
@@ -55,10 +55,10 @@ const portfolioProjects = [
     ],
     tags: ["Linux / Debian", "LDAP", "Squid Proxy", "Iptables", "Bash CLI"],
     images: [
-      "/assets/nexus/001.png", "/assets/nexus/002.png", "/assets/nexus/003.png", "/assets/nexus/004.png",
-      "/assets/nexus/005.png", "/assets/nexus/006.png", "/assets/nexus/007.png", "/assets/nexus/008.png",
-      "/assets/nexus/009.png", "/assets/nexus/010.png", "/assets/nexus/011.png", "/assets/nexus/012.png",
-      "/assets/nexus/013.png", "/assets/nexus/014.png"
+      "assets/nexus/001.png", "assets/nexus/002.png", "assets/nexus/003.png", "assets/nexus/004.png",
+      "assets/nexus/005.png", "assets/nexus/006.png", "assets/nexus/007.png", "assets/nexus/008.png",
+      "assets/nexus/009.png", "assets/nexus/010.png", "assets/nexus/011.png", "assets/nexus/012.png",
+      "assets/nexus/013.png", "assets/nexus/014.png"
     ],
     github: "https://github.com/rpjicond/labs-CISCO-CCNA-CCNP/blob/main/Toulouse%20Identity%20Nexus%20(T.I.N.)%20%26%20Sentry%20Proxy/README.md",
     icon: <Shield className="w-5 h-5" />
@@ -76,9 +76,9 @@ const portfolioProjects = [
     ],
     tags: ["React 3D", "Redis", "SpaceTech", "Telemetry", "Backend"],
     images: [
-      "/assets/satellite/001.png", "/assets/satellite/002.png", "/assets/satellite/003.png", "/assets/satellite/004.png",
-      "/assets/satellite/005.png", "/assets/satellite/006.png", "/assets/satellite/007.png", "/assets/satellite/008.png",
-      "/assets/satellite/009.png", "/assets/satellite/010.png", "/assets/satellite/011.png", "/assets/satellite/012.png"
+      "assets/satellite/001.png", "assets/satellite/002.png", "assets/satellite/003.png", "assets/satellite/004.png",
+      "assets/satellite/005.png", "assets/satellite/006.png", "assets/satellite/007.png", "assets/satellite/008.png",
+      "assets/satellite/009.png", "assets/satellite/010.png", "assets/satellite/011.png", "assets/satellite/012.png"
     ],
     github: "https://github.com/rpjicond/satellite-mission-control",
     icon: <Satellite className="w-5 h-5" />
@@ -96,9 +96,9 @@ const portfolioProjects = [
     ],
     tags: ["Mapbox", "LoRaWAN", "MQTT", "Mobile App", "React"],
     images: [
-      "/assets/ecoangola/001.png", "/assets/ecoangola/002.png", "/assets/ecoangola/003.png", "/assets/ecoangola/004.png",
-      "/assets/ecoangola/005.png", "/assets/ecoangola/006.png", "/assets/ecoangola/007.png", "/assets/ecoangola/008.png",
-      "/assets/ecoangola/009.png", "/assets/ecoangola/010.png", "/assets/ecoangola/011.png", "/assets/ecoangola/012.png"
+      "assets/ecoangola/001.png", "assets/ecoangola/002.png", "assets/ecoangola/003.png", "assets/ecoangola/004.png",
+      "assets/ecoangola/005.png", "assets/ecoangola/006.png", "assets/ecoangola/007.png", "assets/ecoangola/008.png",
+      "assets/ecoangola/009.png", "assets/ecoangola/010.png", "assets/ecoangola/011.png", "assets/ecoangola/012.png"
     ],
     github: "",
     icon: <Map className="w-5 h-5" />
@@ -116,10 +116,10 @@ const portfolioProjects = [
     ],
     tags: ["React 3D", "Spring Boot", "MQTT", "API Gateway", "ESP32"],
     images: [
-      "/assets/smarthome/001.png", "/assets/smarthome/002.png", "/assets/smarthome/003.png", "/assets/smarthome/004.png",
-      "/assets/smarthome/005.png", "/assets/smarthome/006.png", "/assets/smarthome/007.png", "/assets/smarthome/008.png",
-      "/assets/smarthome/009.png", "/assets/smarthome/010.png", "/assets/smarthome/011.png", "/assets/smarthome/012.png",
-      "/assets/smarthome/013.png"
+      "assets/smarthome/001.png", "assets/smarthome/002.png", "assets/smarthome/003.png", "assets/smarthome/004.png",
+      "assets/smarthome/005.png", "assets/smarthome/006.png", "assets/smarthome/007.png", "assets/smarthome/008.png",
+      "assets/smarthome/009.png", "assets/smarthome/010.png", "assets/smarthome/011.png", "assets/smarthome/012.png",
+      "assets/smarthome/013.png"
     ],
     github: "",
     icon: <Home className="w-5 h-5" />
@@ -137,8 +137,8 @@ const portfolioProjects = [
     ],
     tags: ["Cisco CLI", "BGP / OSPF / EIGRP", "Network Architecture", "Routing", "Simulation"],
     images: [
-      "/assets/networking/001.png", "/assets/networking/002.png", "/assets/networking/003.png",
-      "/assets/networking/004.png", "/assets/networking/005.png", "/assets/networking/006.png"
+      "assets/networking/001.png", "assets/networking/002.png", "assets/networking/003.png",
+      "assets/networking/004.png", "assets/networking/005.png", "assets/networking/006.png"
     ],
     github: "https://github.com/rpjicond/labs-CISCO-CCNA-CCNP/tree/main/Inter-AS-Routing-BGP-OSPF-EIGRP",
     icon: <Network className="w-5 h-5" />
@@ -156,7 +156,7 @@ const portfolioProjects = [
     ],
     tags: ["Python", "Django", "IoT / Smartwatch", "REST API", "HealthTech"],
     images: [
-      "/assets/medicare/001.png", "/assets/medicare/002.png", "/assets/medicare/003.png"
+      "assets/medicare/001.png", "assets/medicare/002.png", "assets/medicare/003.png"
     ],
     github: "https://github.com/rpjicond/Hospital-System",
     icon: <HeartPulse className="w-5 h-5" />
@@ -174,9 +174,9 @@ const portfolioProjects = [
     ],
     tags: ["Proteus", "C++", "Ethernet", "Sensors"],
     images: [
-      "/assets/proteus/001.png", "/assets/proteus/002.png", "/assets/proteus/003.png",
-      "/assets/proteus/004.png", "/assets/proteus/005.png", "/assets/proteus/006.png",
-      "/assets/proteus/007.png", "/assets/proteus/008.png", "/assets/proteus/009.png"
+      "assets/proteus/001.png", "assets/proteus/002.png", "assets/proteus/003.png",
+      "assets/proteus/004.png", "assets/proteus/005.png", "assets/proteus/006.png",
+      "assets/proteus/007.png", "assets/proteus/008.png", "assets/proteus/009.png"
     ],
     github: "",
     icon: <Activity className="w-5 h-5" />
@@ -250,8 +250,8 @@ const portfolioProjects = [
     ],
     tags: ["PHP", "MySQL", "Chart.js", "Data Viz"],
     images: [
-      "/assets/web-monitoring/001.png", "/assets/web-monitoring/002.png", "/assets/web-monitoring/003.png",
-      "/assets/web-monitoring/004.png", "/assets/web-monitoring/005.png"
+      "assets/web-monitoring/001.png", "assets/web-monitoring/002.png", "assets/web-monitoring/003.png",
+      "assets/web-monitoring/004.png", "assets/web-monitoring/005.png"
     ],
     github: "https://github.com/rpjicond/Monitoring_IoT",
     icon: <Database className="w-5 h-5" />
@@ -269,7 +269,7 @@ const portfolioProjects = [
     ],
     tags: ["Python", "Pygame", "AI / Minimax", "Algorithmie"],
     images: [
-      "/assets/tictactoe/001.png", "/assets/tictactoe/002.png"
+      "assets/tictactoe/001.png", "assets/tictactoe/002.png"
     ],
     github: "https://github.com/rpjicond/tic-tac",
     icon: <Gamepad2 className="w-5 h-5" />
@@ -287,7 +287,7 @@ const portfolioProjects = [
     ],
     tags: ["IoT", "MQTT", "Python", "ESP8266", "Minecraft API"],
     images: [
-      "/assets/minecraft-iot/001.png", "/assets/minecraft-iot/002.png", "/assets/minecraft-iot/003.png", "/assets/minecraft-iot/004.png"
+      "assets/minecraft-iot/001.png", "assets/minecraft-iot/002.png", "assets/minecraft-iot/003.png", "assets/minecraft-iot/004.png"
     ],
     github: "https://github.com/rpjicond/minecraft-iot-gloves-mqtt",
     icon: <Gamepad2 className="w-5 h-5" />
@@ -305,7 +305,7 @@ const portfolioProjects = [
     ],
     tags: ["IoT / ESP8266", "Node-RED", "InfluxDB & Grafana", "VRRP / HA", "Security"],
     images: [
-      "/assets/datacenter-security/001.png", "/assets/datacenter-security/002.png"
+      "assets/datacenter-security/001.png", "assets/datacenter-security/002.png"
     ],
     github: "https://github.com/rpjicond/Securisation-IoT-d-un-Datacenter",
     icon: <Lock className="w-5 h-5" />
